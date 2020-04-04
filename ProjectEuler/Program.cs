@@ -19,25 +19,20 @@ namespace ProjectEuler
             var a = new bool[len];
             Int64 sum = 0;
 
-            for (int i = 0; i < len; i++)
-            {
-                a[i] = true;
-            }
-
             for (int i = 2; i*i < len; i++)
             {
-                if (a[i])
+                if (!a[i])
                 {
                     for (int j = i*i; j < len; j += i)
                     {
-                        a[j] = false;
+                        a[j] = true;
                     }
                 }
             }
 
             for (int i = 2; i < len; i++)
             {
-                if(a[i])
+                if(!a[i])
                 {
                     sum += i;
                 }
